@@ -12,7 +12,9 @@ window.addEventListener('beforeunload', function (e) {
       }});
 
 
-
+function Minecraft() {
+  (function(){window.mcbmRootURI='https://minecraft.mathonline.click/mc/';window.mcbmScriptURI='mcbm.min.js';window.mcbmLang='eng';var s,ss=window.mcbmRootURI+'js/mcbm-load.min.js';s=document.createElement('script');s.src=ss;document.body.appendChild(s);})();
+}
   
   function HideButtons() {
       const buttons = document.querySelectorAll('button');
