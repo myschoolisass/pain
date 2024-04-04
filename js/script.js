@@ -17,7 +17,7 @@ window.addEventListener('beforeunload', function (e) {
         HideButtons();
         let iframe = document.getElementById('contentFrame');
         iframe.srcdoc = `
-        <iframe src="./testmark.html" width=100% height=${contentFrame.clientHeight}>`;
+        <iframe src="https://myschoolisass.github.io/pain/testmark.html" width=100% height=${contentFrame.clientHeight}>`;
     }
   
   function HideButtons() {
