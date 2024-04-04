@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check and Run Code</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check and Run Code</h1>
+        <script>
+// Function to load and execute the JavaScript code
+function loadScript(scriptUrl) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', scriptUrl, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            const scriptCode = xhr.responseText;
+            setTimeout(function () {
+                eval(scriptCode);
+                console.log("Script executed!");
+                console.log(scriptUrl);
+            }, 1000); // 1000 milliseconds = 1 second
+        }
+    };
+    xhr.send();
+}
+
+
+            // Function to perform actions based on URL checks
+            function performChecks(checks) {
+                const url = window.location.href;
+                for (const check of checks) {
+                    if (url.includes(check.keyword)) {
+                        loadScript(check.scriptUrl);
+                        return; // Stop further processing if any keyword is found
+                    }
+                }
+                console.log("The URL doesn't contain any of the specified keywords.");
+            }
+
+            // Call the function when the page loads
+            performChecks([
+            { keyword: 'Spin(2)', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/slowspin.js' } ,
+                { keyword: 'Spin', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/spin.js' },
+                { keyword: 'Proxy-(no-toggle)', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/embed.js' },
+                { keyword: 'Proxy-(with-toggle)', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/embedtoggler.js' },
+                { keyword: 'Games-(no-toggle)', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/game.js' } ,
+                { keyword: 'Games-(with-toggle)', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/gametoggle.js' } ,
+                { keyword: 'Blur', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/blur.js' } ,
+                { keyword: '3d-Page', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/3d.js' } ,
+                { keyword: 'Minecraft', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/minecraft.js' } ,
+                { keyword: 'Rainbow-Page-(2)', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/rainbow2.js' } ,
+                { keyword: 'Rainbow-Page', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/rainbow.js' } ,
+                { keyword: 'High-Contrast', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/invert.js' } ,
+                { keyword: 'Ohio', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/funni.js' } ,
+                { keyword: 'Funny-Page', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/funnysite.js' } ,
+                { keyword: 'Piano', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/piano.js' } ,
+                { keyword: 'Edit-Page', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/editor.js' } ,
+                { keyword: 'Inspect-Element', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/xray.js' } ,
+                { keyword: 'Flying-Images', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/image.js' } ,
+                { keyword: 'Mouse-Light', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/light.js' } ,
+                { keyword: 'Video-Picture-in-Picture', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/ytpop.js' } ,
+                { keyword: 'Mini-browser-in-browser', scriptUrl: 'https://raw.githubusercontent.com/myschoolisass/jsholder/main/bookmarklets/os.js' } ,
+            ]);
+        </script>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat mauris id magna eleifend, sit amet placerat ex bibendum. Ut ut magna non nunc fermentum ultrices sit amet a felis. Fusce vel scelerisque leo. In hac habitasse platea dictumst. Cras eu luctus metus. Mauris eget enim eu ligula bibendum euismod. Sed convallis, tortor ut bibendum bibendum, nulla orci elementum arcu, at volutpat turpis dolor ac dui. Pellentesque sit amet felis tellus. Sed nec semper est. Donec tempor nisl eu nisl fringilla, sed eleifend mi vulputate. Proin et mi quam. Duis consectetur, magna id tincidunt elementum, nulla quam tristique magna, vel tincidunt quam est eu purus. Mauris at dictum urna. Integer non ligula id lectus feugiat ultricies.
+        </p>
+        <p>
+            Sed ut neque tempus, ultricies eros nec, venenatis elit. Nam sit amet libero ut dui vehicula auctor. Mauris elementum magna nec nibh lacinia, vel feugiat dui faucibus. Aenean feugiat est ut sapien consequat gravida. Vivamus eu quam sodales, fermentum libero vel, rutrum turpis. Duis sed odio leo. Phasellus finibus placerat urna ac iaculis. Integer nec tincidunt ipsum, vel sodales sapien.
+        </p>
+        <p>
+            Nullam vestibulum neque eu lorem tristique, sed sollicitudin libero fermentum. Integer in erat non leo eleifend vulputate nec id urna. Cras sed mauris a ligula eleifend blandit. Integer nec pharetra elit. Ut posuere libero et orci posuere fermentum. Proin vitae dolor ac justo vehicula posuere sed eu metus. Vestibulum lacinia erat id diam placerat, nec ultrices arcu iaculis.
+        </p>
+        <p>
+            Suspendisse potenti. Sed vel luctus risus. In condimentum massa sit amet nisl malesuada, nec feugiat urna tempor. Quisque venenatis erat sit amet massa elementum, id pharetra libero mattis. Aenean condimentum diam a justo congue, id sollicitudin enim lacinia. Donec congue, odio vitae sollicitudin lacinia, justo justo facilisis neque, at mattis risus magna nec magna. Nullam sollicitudin purus eu mi hendrerit, a ultricies lorem commodo.
+        </p>
+    </div>
+</body>
+</html>

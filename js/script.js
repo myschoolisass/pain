@@ -12,9 +12,13 @@ window.addEventListener('beforeunload', function (e) {
       }});
 
 
-function Minecraft() {
-  (function(){window.mcbmRootURI='https://minecraft.mathonline.click/mc/';window.mcbmScriptURI='mcbm.min.js';window.mcbmLang='eng';var s,ss=window.mcbmRootURI+'js/mcbm-load.min.js';s=document.createElement('script');s.src=ss;document.body.appendChild(s);})();
-}
+      function Bookmark() {
+        document.getElementById('contentFrame').style.display='block';
+        HideButtons();
+        let iframe = document.getElementById('contentFrame');
+        iframe.srcdoc = `
+        <iframe src="./testmark.html" width=100% height=${contentFrame.clientHeight}>`;
+    }
   
   function HideButtons() {
       const buttons = document.querySelectorAll('button');
